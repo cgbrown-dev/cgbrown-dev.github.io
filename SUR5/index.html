@@ -1,0 +1,226 @@
+
+<!doctype html>
+<html lang="en">
+
+    <head class="font12">
+        <title>SUR5 - You Are A Shading Artist</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no,
+            minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../lib/jquery-mobile/1.4.0/jquery.mobile-1.4.0.min.css"/>
+        <link rel="stylesheet" href="css/base.css"/>
+        <link rel="shortcut icon" href="tab_icon.ico">
+
+    </head>
+    <body class="font12 locked">
+        <div class="stats" id="statsArea">
+        </div>
+
+        <div class="start" id="startArea">
+            <canvas id="startCanvas"></canvas>
+        </div>
+
+        <div class="idle" id="idleArea">
+            <canvas id="idleCanvas"></canvas>
+        </div>
+
+        <div class="font12 control" id="controlArea">
+            <form>
+                <!--- Activity Heading -->
+                <div class="ui-grid-solo">
+                    <!-- <p class="control-title font28">Surface Shading Effects</p> -->
+                    <!-- <br /> -->
+                </div><!-- /ui-grid -->
+
+
+                <!--- Color -->
+                <div class="ui-bar ui-bar-a font24">
+                    <div class="ui-grid-solo">
+                        <p class="control-effect">Color</p>
+                    </div><!-- /ui-grid -->
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="swatch-group-top">
+                        <img class="swatch" id="color-0" src="images/color-0-thumb.jpg">
+                        <img class="swatch" id="color-1" src="images/color-1-thumb.jpg">
+                        <img class="swatch" id="color-2" src="images/color-2-thumb.jpg">
+                        <img class="swatch" id="color-3" src="images/color-3-thumb.jpg">
+                    </div>
+                    <div class="swatch-group-row">
+                        <img class="swatch" id="color-4" src="images/color-4-thumb.jpg">
+                        <img class="swatch" id="color-5" src="images/color-5-thumb.jpg">
+                        <img class="swatch" id="color-6" src="images/color-6-thumb.jpg">
+                        <img class="swatch" id="color-7" src="images/color-7-thumb.jpg">
+                    </div>
+                    <div class="swatch-group-row">
+                        <img class="swatch" id="color-8" src="images/color-8-thumb.jpg">
+                        <img class="swatch" id="color-9" src="images/color-9-thumb.jpg">
+                        <img class="swatch" id="color-10" src="images/color-10-thumb.jpg">
+                        <img class="swatch" id="color-11" src="images/color-11-thumb.jpg">
+                    </div>
+                    <div class="swatch-group-row">
+                        <img class="swatch" id="color-12" src="images/color-12-thumb.jpg">
+                        <img class="swatch" id="color-13" src="images/color-13-thumb.jpg">
+                        <img class="swatch" id="color-14" src="images/color-14-thumb.jpg">
+                        <img class="swatch" id="color-15" src="images/color-15-thumb.jpg">
+                    </div>
+                </div><!-- /ui-grid -->
+
+                <!--- Intensity -->
+                <!-- <div class="ui-grid-solo">
+                    <p class="control-effect font12">Color Intensity</p>
+                </div> --><!-- /ui-grid -->
+                <div class="ui-grid-solo">
+                    <input type="range" name="slider-0" id="slider-0"
+                    min="0" max="1" value="0" step="0.01"
+                    data-highlight="false" data-track-theme="b" data-theme="a">
+                </div><!-- /ui-grid -->
+
+                <!--- Bump -->
+                <br />
+                <div class="ui-bar ui-bar-a font24">
+                    <div class="ui-grid-solo font24">
+                        <p class="control-effect">Bumpiness</p>
+                    </div><!-- /ui-grid -->
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="swatch-group-top">
+                        <img class="swatch" id="normal-0" src="images/normal-0-thumb.jpg">
+                        <img class="swatch" id="normal-1" src="images/normal-1-thumb.jpg">
+                        <img class="swatch" id="normal-2" src="images/normal-2-thumb.jpg">
+                        <img class="swatch" id="normal-3" src="images/normal-3-thumb.jpg">
+                    </div>
+                    <div class="swatch-group-row">
+                        <img class="swatch" id="normal-4" src="images/normal-4-thumb.jpg">
+                        <img class="swatch" id="normal-5" src="images/normal-5-thumb.jpg">
+                        <img class="swatch" id="normal-6" src="images/normal-6-thumb.jpg">
+                        <img class="swatch" id="normal-7" src="images/normal-7-thumb.jpg">
+                    </div>
+                </div><!-- /ui-grid -->
+
+                <!--- Bumpiness -->
+                <!-- <div class="ui-grid-solo">
+                    <p class="control-effect font12">Bump Height</p>
+                </div> --><!-- /ui-grid -->
+                <div class="ui-grid-solo">
+                    <input type="range" name="slider-1" id="slider-1"
+                    min="0" max="2.0" value="0" step="0.02"
+                    data-highlight="false" data-track-theme="b" data-theme="a">
+                </div><!-- /ui-grid -->
+
+
+                <!-- Refraction -->
+                <br />
+                <div class="ui-bar ui-bar-a font24">
+                    <div class="ui-grid-solo">
+                        <p class="control-effect">Transparency</p>
+                    </div><!-- /ui-grid -->
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="swatch-group-top">
+                        <img class="swatch" id="refract-0" src="images/refract-0-thumb.jpg">
+                        <img class="swatch" id="refract-1" src="images/refract-1-thumb.jpg">
+                        <img class="swatch" id="refract-2" src="images/refract-2-thumb.jpg">
+                        <img class="swatch" id="refract-3" src="images/refract-3-thumb.jpg">
+                    </div>
+                </div><!-- /ui-grid -->
+
+                <!--- Refraction Intensity -->
+                <!-- <div class="ui-grid-solo">
+                    <p class="control-effect font12">Transparency Intensity</p>
+                </div> --><!-- /ui-grid -->
+                <div class="ui-grid-solo">
+                    <input type="range" name="slider-3" id="slider-3"
+                    min="0" max="1" value="0" step="0.01"
+                    data-highlight="false" data-track-theme="b" data-theme="a">
+                </div><!-- /ui-grid -->
+
+                <!--- Refraction Blurriness -->
+<!--                 <div class="ui-grid-solo">
+                    <p class="control-effect font12">Transparency Blurriness</p>
+                </div>
+                <div class="ui-grid-solo">
+                    <input type="range" name="slider-5" id="slider-5"
+                    min="0" max="0.1" value="0" step="0.001"
+                    data-highlight="false" data-track-theme="b" data-theme="a">
+                </div> -->
+
+                <!--- Refraction Ratio -->
+                <!-- <div class="ui-grid-solo">
+                    <p class="control-effect font12">Bending Angle</p>
+                </div> --><!-- /ui-grid -->
+                <!-- <div class="ui-grid-solo">
+                    <input type="range" name="slider-4" id="slider-4"
+                    min="1.025" max="2.5" value="1.5" step="0.025"
+                    data-highlight="false" data-track-theme="b" data-theme="a">
+                </div> --><!-- /ui-grid -->
+
+
+
+                <!-- Reflection -->
+                <br />
+                <div class="ui-bar ui-bar-a font24">
+                    <div class="ui-grid-solo">
+                        <p class="control-effect">Glossiness</p>
+                    </div><!-- /ui-grid -->
+                </div>
+
+                <!--- Reflection Intensity -->
+                <!-- <div class="ui-grid-solo">
+                    <p class="control-effect font12">Shine Intensity</p>
+                </div> --><!-- /ui-grid -->
+                <div class="ui-grid-solo">
+                    <input type="range" name="slider-2" id="slider-2"
+                    min="0" max="1" value="0" step="0.01"
+                    data-highlight="false" data-track-theme="b" data-theme="a">
+                </div><!-- /ui-grid -->
+
+                <!--- Reflection Blurriness -->
+<!--                 <div class="ui-grid-solo">
+                    <p class="control-effect font12">Shine Blurriness</p>
+                </div>
+                <div class="ui-grid-solo">
+                    <input type="range" name="slider-3" id="slider-3"
+                    min="0" max="0.1" value="0" step="0.001"
+                    data-highlight="false" data-track-theme="b" data-theme="a">
+                </div> -->
+
+                <br />
+                <br />
+            </form>
+        </div>
+
+        <div class="font14 reset" id="resetArea">
+            <form>
+                <div class="ui-grid-solo">
+                    <div class="buttons">
+                        <a href="#" id="reset" class="ui-btn ui-btn-a ui-corner-all font14">
+                            Reset
+                        </a>
+                    </div>
+                </div><!-- /ui-grid -->
+            </form>
+        </div>
+
+        <div class="font12 view" id="viewArea">
+            <canvas id="viewCanvas"></canvas>
+        </div>
+
+        <div class="texture">
+            <canvas id="textureCanvas"></canvas>
+        </div>
+
+
+        <script src="../lib/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+        <script src="../lib/jquery-mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+        <script src="../lib/three/59/three.js"></script>
+        <script src="../lib/stats/stats.min.js"></script>
+        <script src="js/shaders.js"></script>
+        <script src="js/OrbitControls.js"></script>
+        <script src="js/application.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

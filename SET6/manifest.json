@@ -1,0 +1,19 @@
+{
+    "name": "TEST - Procedural Sets",
+    "description": "Test of a simple grass generator using splines.",
+    "version": "4.0",
+    "manifest_version": 2,
+
+    "app": {
+        "background": {
+            "scripts": [
+                "js/main.js"
+            ]
+        }
+    },
+
+    "icons": {
+        "128": "icon_128.png"
+    },
+    "kiosk_enabled": true
+}

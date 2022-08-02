@@ -1,0 +1,195 @@
+
+<!doctype html>
+<html lang="en">
+
+    <head class="font12">
+        <title>SET6 Test - Procedural Sets</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no,
+            minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css"/>
+        <link rel="stylesheet" href="css/theme.css"/>
+        <link rel="stylesheet" href="css/base.css"/>
+        <link rel="shortcut icon" href="tab_icon.ico">
+
+    </head>
+    <body class="font12 locked">
+        <div class="stats" id="statsArea">
+        </div>
+
+        <div class="wait" id="waitArea">
+            <canvas id="waitCanvas"></canvas>
+        </div>
+
+        <div class="font12 view" id="viewArea">
+            <form>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div class="ui-page-theme-b gradient">
+                            <div class="ui-grid-solo total-grid-solo">
+                                <p class="total-label font12" id="total-time">
+                                    . . . Seconds
+                                </p>
+                            </div><!-- /ui-grid -->
+                            <div class="ui-grid-solo">
+                                <p class="title font36">
+                                    Use an algorithm to make <br />natural-looking grass.
+                                </p>
+                            </div><!-- /ui-grid -->
+                        <br />
+                        </div>
+
+                        <div class="ui-page-theme-b gradient">
+                        <br />
+                            <div class="ui-body ui-body-a">
+                                <div class="ui-grid-solo">
+                                    <p class="attribute-label font26">
+                                        Number of Grass Blades
+                                    </p>
+                                </div><!-- /ui-grid -->
+                                <div class="ui-grid-solo">
+                                    <input type="range" name="slider-0"
+                                    id="slider-0" min="10" max="500" value="500" step="5"
+                                    data-highlight="true" data-track-theme="a" data-theme="a">
+                                    <p class="slider-label-left font22">
+                                        Sparse
+                                    </p>
+                                    <p class="slider-label-right font22">
+                                        Dense
+                                    </p>
+                                </div><!-- /ui-grid -->
+                            </div><!-- /ui-body -->
+                        <br />
+                        </div>
+
+                        <div class="ui-page-theme-b gradient">
+                        <br />
+                            <div class="ui-body ui-body-c">
+                                <div class="ui-grid-solo">
+                                    <p class="attribute-label font26">
+                                        Blade Color
+                                    </p>
+                                </div><!-- /ui-grid -->
+                                <div class="ui-grid-solo">
+                                    <input type="range" name="slider-1"
+                                    id="slider-1" min="1" max="100" value="50" step="1"
+                                    data-highlight="false" data-track-theme="c" data-theme="c">
+                                </div><!-- /ui-grid -->
+                            </div><!-- /ui-body -->
+                            <div class="ui-body ui-body-b">
+                                <div class="ui-grid-solo">
+                                    <input type="range" name="slider-2"
+                                    id="slider-2" min="1" max="100" value="50" step="1"
+                                    data-highlight="true" data-track-theme="b" data-theme="b">
+                                    <p class="slider-label-left font22">
+                                        Mostly alike
+                                    </p>
+                                    <p class="slider-label-right font22">
+                                        Mostly different
+                                    </p>
+                                </div><!-- /ui-grid -->
+                            </div><!-- /ui-body -->
+                        <br />
+                        </div><!-- /ui-page -->
+
+                        <div class="ui-page-theme-b gradient">
+                        <br />
+                            <div class="ui-body ui-body-a">
+                                <div class="ui-grid-solo">
+                                    <p class="attribute-label font26">
+                                        Blade Length
+                                    </p>
+                                </div>
+                                <div class="ui-grid-solo">
+                                    <input type="range" name="slider-3"
+                                    id="slider-3" min="1" max="100" value="50" step="1"
+                                    data-highlight="true" data-theme="a">
+                                    <p class="slider-label-left font22">
+                                        Short
+                                    </p>
+                                    <p class="slider-label-right font22">
+                                        Long
+                                    </p>
+                                </div>
+                            </div><!-- /ui-body -->
+                            <div class="ui-body ui-body-b">
+                                <div class="ui-grid-solo">
+                                    <input type="range" name="slider-4"
+                                    id="slider-4" min="1" max="100" value="50" step="1"
+                                    data-highlight="true" data-theme="b">
+                                    <p class="slider-label-left font22">
+                                        Mostly alike
+                                    </p>
+                                    <p class="slider-label-right font22">
+                                        Mostly different
+                                    </p>
+                                </div>
+                            </div>
+                        <br />
+                        </div>
+
+                        <div class="ui-page-theme-a gradient">
+                        <br />
+                            <div class="ui-body ui-body-a">
+                                <div class="ui-grid-solo">
+                                    <p class="attribute-label font26">
+                                        Blade Bendiness
+                                    </p>
+                                </div>
+                                <div class="ui-grid-solo">
+                                    <input type="range" name="slider-5"
+                                    id="slider-5" min="1" max="100" value="50" step="1"
+                                    data-highlight="true" data-track-theme="a" data-theme="a">
+                                    <p class="slider-label-left font22">
+                                        Straight
+                                    </p>
+                                    <p class="slider-label-right font22">
+                                        Curved
+                                    </p>
+                                </div>
+                            </div><!-- /ui-body -->
+                            <div class="ui-body ui-body-b">
+                                <div class="ui-grid-solo">
+                                    <input type="range" name="slider-6"
+                                    id="slider-6" min="1" max="100" value="50" step="1"
+                                    data-highlight="true" data-track-theme="b" data-theme="b">
+                                    <p class="slider-label-left font22">
+                                        Mostly alike
+                                    </p>
+                                    <p class="slider-label-right font22">
+                                        Mostly different
+                                    </p>
+                                </div><!-- /ui-grid -->
+                            </div><!-- /ui-body -->
+
+                            <div class="ui-grid-solo">
+                                <a href="#" id="compute" class="generate-button ui-btn ui-btn-a ui-corner-all">
+                                    <p class="font26">Generate Grass</p>
+                                </a>
+                            </div><!-- /ui-grid -->
+                        </div>
+
+                    </div><!-- ui-block-a -->
+                    <div class="ui-block-b">
+                        <canvas id="viewCanvas"></canvas>
+                    </div><!-- ui-block-b -->
+                </div><!-- ui-grid-a -->
+            </form>
+        </div>
+
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.0.min.js"></script>
+        <script src="js/three.js"></script>
+        <script src="js/stats.min.js"></script>
+        <script src="js/constants.js"></script>
+        <script src="js/html.js"></script>
+        <script src="js/graphics.js"></script>
+        <script src="js/state.js"></script>
+        <script src="js/debug.js"></script>
+        <script src="js/grass.js"></script>
+        <script src="js/OrbitControls.js"></script>
+        <script src="js/application.js"></script>
+        <script src="js/run.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
